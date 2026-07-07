@@ -1,0 +1,7 @@
+transformers==4.54.0
+lm-eval==0.4.9.2
+numpy>=1.24
+tqdm>=4.66.0
+prettytable
+hydra-core
+matplotlib

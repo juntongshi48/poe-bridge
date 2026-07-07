@@ -1,0 +1,35 @@
+defaults:
+  - _self_
+
+# conf/config.yaml
+model_alias: "dream"   # choices: [qwen7b, qwen_small, dream]
+task: "gsm8k"          # choices: [gsm8k, math, humaneval, mbpp, gpqa]
+output_dir: "results"
+limit: null            # int or null, "Limit the number of samples per task for quick testing (e.g., 10 or 0.1 for 10%%)."
+num_runs: 1              # the number of repeated runs
+tag: ""                    # name suffix for results
+
+qwen_small_ckpt: "Qwen/Qwen2.5-0.5B"
+qwen_7b_ckpt: "Qwen/Qwen2.5-7B"
+dream_ckpt: "Dream-org/Dream-v0-Instruct-7B"
+
+alg: null              # choices: [leftright, random, origin, entropy, poe-bridge]
+
+kv_window: null            # W
+max_lookahead: null        # M
+mixture_weight: null       # w
+
+n_parallel_samples: null
+n_low_temp_samples: null
+verify_window_size: null
+
+verifier_size: "small"     # choices: [small, large]
+
+temperature: 0.2
+top_p: 0.95
+max_length: null
+
+high_temperature: 0.7     # high temperature for low confidence sampling
+anneal_temp: true         # whether to anneal temperature during sampling
+
+num_steps: null            # numer of dlm steps per block
